@@ -1,7 +1,8 @@
-*.ss~
-*.ss#*
-.#*.ss
+# Racket
+*.rkt~
+*.rkt#*
+.#*.rkt
 
-*.scm~
-*.scm#*
-.#*.scm
+# Local system
+*.sw?
+.DS_Store
