@@ -40,4 +40,17 @@
 (/ 1 (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 6))
 
 ;; Q2
+(define (next-perf n)
+  (define (sum-of-factors x running-total)
+    (cond ((= x 0) (+ running-total 1))
+          ((= (remainder n x) 0) (sum-of-factors (- x 1) (+ x running-total)))
+          (else (sum-of-factors (- x 1) running-total))))
+  (if (equal? (sum-of-factors n 0) n)
+      n
+      (next-perf (+ 1 n))))
+
+;; Testing Q2
+(equal? (next-perf 1) 6)
+(next-perf 1)
+
 
